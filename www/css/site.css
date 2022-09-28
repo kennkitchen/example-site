@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
+html, body, h1, h2, h3, h4, h5, h6, a, p {font-family: "Montserrat", sans-serif}
+
+/*.w3-bar-block .w3-bar-item {*/
+/*    padding: 16px;*/
+/*    font-weight: bold;*/
+/*}*/
+
+#weatherBox {
+    padding-left: 20px;
+    /*background-color: #000;*/
+    color: #fff;
+    /*float: bottom;*/
+}
+
+#weatherBox select, #weather button {
+    font-size: 18px;
+}
+
+#weatherBox h4 {
+    margin: 10px 0;
+}
+
+#weatherBox .textAlignLeft {
+    text-align: left;
+}
+
+#weatherBox .textAlignLeft img {
+    display: none;
+    /*width: 80%;*/
+}
+
+#weatherBox #weather table {
+    width: 240px;
+}
+
+#weather #weather table th {
+    text-align: left;
+    text-decoration: underline;
+}
+
+.current {
+    color: #df3e23;
+}

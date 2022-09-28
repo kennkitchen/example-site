@@ -1,0 +1,20 @@
+{% extends "base.twig" %}
+
+{% block title %}Home{% endblock %}
+{% block head %}
+    {{ parent() }}
+{% endblock %}
+{% block content %}
+    <h1>Welcome!</h1>
+    <p>This is an example site that I've been putting together for a series of blog posts. It uses <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a> for styling, something that I probably wouldn't do for a client's site;
+        however, when I'm putting something together for code-testing purposes, often I just want something quick and
+        simple for basic styling purposes.</p>
+    <p>When I'm working with WordPress, my CSS is vanilla. When I'm doing something (like an app) that's stand-alone, I'll
+        almost always use a CSS framework (such as <a href="https://milligram.io/" target="_blank">Milligram</a>, <a href="https://bulma.io/" target="_blank">Bulma</a>, or <a href="https://tailwindcss.com/" target="_blank">Tailwind</a>).</p>
+    <h2>Code</h2>
+    <p>This provides an example of a static website built in a way that supports growth into something bigger. It uses a PHP
+        backend but only serves static pages at the moment. It's an example of what I might do if a client needed something
+        quick to serve as a basic web presence but had plans to add custom functionality later.</p>
+    <p>Also, I'm doing some silly things just for demonstration purposes... like fading the pages in and showing the weather
+        via an AJAX call to the Open Weather API.</p>
+{% endblock %}

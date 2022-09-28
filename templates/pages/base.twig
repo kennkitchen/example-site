@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% block head %}
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/w3.css"/>
+        <link rel="stylesheet" href="css/site.css"/>
+        <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-indigo.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>{% block title %}{% endblock %} - My Webpage</title>
+    {% endblock %}
+</head>
+<body>
+<nav class="w3-sidebar w3-theme-dark w3-bar-block w3-collapse w3-card" style="z-index:3;width:250px;" id="defaultSidebar">
+        <a class="w3-bar-item w3-button w3-border-bottom w3-large" href="/"><img src="images/KKDefaultLogoWide.png" style="width:80%;"></a>
+        <a class="w3-bar-item w3-button w3-hide-large w3-large" href="javascript:void(0)" onclick="w3_close()">Close <i class="fa fa-remove"></i></a>
+        <a class="w3-bar-item w3-button" href="/">Home</a>
+        <a class="w3-bar-item w3-button" href="/about">About</a>
+        <a class="w3-bar-item w3-button" href="/contact">Contact</a>
+        <div>
+                <a class="w3-bar-item w3-button" onclick="accordionHandler('features')" href="javascript:void(0)">Features <i class="fa fa-caret-down"></i></a>
+                <div id="features" class="w3-hide">
+                        <a id="modalLinkOne" class="w3-bar-item w3-button" href="">Show a Modal</a>
+                        <a class="w3-bar-item w3-button" href="#">Link</a>
+                </div>
+        </div>
+</nav>
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="defaultOverlay"></div>
+
+<div id="main" class="w3-main" style="margin-left:250px;" hidden>
+
+        <div id="topSection" class="w3-container w3-top w3-theme w3-large">
+                <p><i class="fa fa-bars w3-button w3-theme w3-hide-large w3-xlarge" onclick="w3_open()"></i>
+                        <span id="introSection" class="w3-hide">Kenn's Example Site</span></p>
+        </div>
+
+        <header class="w3-container w3-theme" style="padding:64px 32px">
+                <h1 class="w3-xxxlarge">Kenn's Example Site</h1>
+        </header>
+
+        <div id="content" class="w3-container" style="padding:32px">{% block content %}{% endblock %}</div>
+
+        <footer id="footer" class="w3-container w3-theme" style="padding:32px">
+                {% block footer %}
+                        <div class="w3-cell-row">
+                                <div id="weatherBox" class="w3-container w3-padding w3-cell">
+                                        <table id="weather"></table>
+                                        <br />
+                                        <select id="citySelect" class="w3-input">
+                                                <option value="Select">Select</option>
+                                                <option value="lat=35.0457219&lon=-85.3094883">Chattanooga</option>
+                                                <option value="lat=42.35866&lon=-71.05674">Boston</option>
+                                                <option value="lat=37.77986&lon=-122.42905">San Francisco</option>
+                                                <option value="lat=33.7489924&lon=-84.3902644">Atlanta</option>
+                                        </select>
+                                </div>
+                                <div id="altBox" class="w3-container w3-padding w3-cell">
+                                        <h4>Something Else!</h4>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, torquent natoque bibendum sapien porta. Parturient netus integer nascetur odio pretium, inceptos venenatis mus litora, auctor habitant convallis hendrerit.</p>
+                                </div>
+                        </div>
+                {% endblock %}
+        </footer>
+
+        <!-- The Modal -->
+        <div id="modalOne" class="w3-modal">
+                <div class="w3-modal-content w3-round-large">
+                        <div class="w3-container">
+      <span onclick="document.getElementById('modalOne').style.display='none'"
+            class="w3-button w3-display-topright">&times;</span>
+                                <div class="w3-container w3-padding-32">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit hendrerit quisque, tellus habitant lobortis gravida dui diam phasellus vitae porttitor, a rutrum congue mollis ultrices commodo auctor semper. Elementum nascetur potenti ac a id ridiculus vel sem, integer justo massa dis nam proin mus donec laoreet, blandit bibendum montes dignissim litora pulvinar condimentum.</p>
+                                        <p>Ultricies porttitor nulla nibh justo per parturient eget facilisi vehicula, vitae quam congue potenti torquent sollicitudin aenean cum dui pulvinar, scelerisque rhoncus cras sociis aptent orci nunc felis. Dictum integer lacinia suspendisse feugiat consequat dictumst senectus augue facilisis tincidunt, venenatis placerat tristique quisque fames maecenas fermentum aenean ornare morbi aliquam, mauris aliquet laoreet justo hac gravida libero magnis curabitur. Tempus congue molestie facilisis quisque tincidunt mus sapien praesent euismod, duis elementum natoque sed curabitur sagittis porta placerat scelerisque, lacus justo mattis curae gravida augue leo sem. At et tortor gravida tristique mattis vel fames leo eu enim non sed, imperdiet suscipit dignissim suspendisse metus conubia pharetra porta laoreet sagittis scelerisque ridiculus, fusce lectus blandit mollis quis in consequat vitae penatibus fringilla nostra. Litora nam turpis lacinia inceptos egestas sapien ornare nulla quam, auctor risus vehicula lobortis pharetra donec sociis orci id fermentum, ultricies sagittis vivamus vestibulum massa elementum montes ac.</p>
+                                </div>
+                        </div>
+                </div>
+        </div>
+</div>
+<script src="js/jquery-3.6.1.min.js"></script>
+<script src="js/custom.js"></script>
+<script src="js/site.js"></script>
+</body>
+</html>
